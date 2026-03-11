@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bible-tracker-v2';
+const CACHE_NAME = 'bible-tracker-v3';
 const BIBLE_CACHE = 'bible-data-v2';
 
 const APP_FILES = [
@@ -13,7 +13,6 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES))
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
@@ -25,10 +24,15 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
-  // Bible data JSON: cache-first (immutable per version)
   if (url.pathname.includes('/data/') && url.pathname.endsWith('.json')) {
     event.respondWith(
       caches.open(BIBLE_CACHE).then(cache =>
@@ -44,7 +48,6 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // App shell: network-first with cache fallback
   event.respondWith(
     fetch(event.request)
       .then(response => {

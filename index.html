@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#1A1A1A;--sf:#242424;--sa:#2E2E2E;--tx:#E8E2D8;--tm:#908880;--ac:#C9A45C;--al:#C9A45C16;--bd:#383838;--cb:#222;--cbd:#383838;--ur:#3E3E3E;--rb:#1A1A1A;--rt:#D5D0C5;--vn:#C9A45C;--dg:#C0504E;--fs:Georgia,'Times New Roman',serif;--fm:ui-monospace,'SF Mono',SFMono-Regular,Menlo,monospace;--fn:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--rd:10px;--st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px);--fz:16px;--lh:1.85}
+:root{--bg:#1A1A1A;--sf:#242424;--sa:#2E2E2E;--tx:#E8E2D8;--tm:#908880;--ac:#C9A45C;--al:#C9A45C16;--bd:#383838;--cb:#222;--cbd:#383838;--ur:#3E3E3E;--rb:#1A1A1A;--rt:#D5D0C5;--vn:#C9A45C;--dg:#C0504E;--fs:Georgia,'Times New Roman',serif;--fm:ui-monospace,'SF Mono',SFMono-Regular,Menlo,monospace;--fn:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--rd:10px;--st:env(safe-area-inset-top,20px);--sb:env(safe-area-inset-bottom,12px);--fz:16px;--lh:1.85}
 [data-theme="light"]{--bg:#FFF;--sf:#F5F3F0;--sa:#ECEAE5;--tx:#1C1A18;--tm:#736B62;--ac:#B08840;--al:#B0884012;--bd:#DDD8D0;--cb:#FAFAF8;--cbd:#DDD8D0;--ur:#D2CEC5;--rb:#FFF;--rt:#2A2825;--vn:#B08840;--dg:#B04040}
 html{height:100%;-webkit-text-size-adjust:100%}body{font-family:var(--fn);background:var(--bg);color:var(--tx);height:100%;overflow:hidden;-webkit-font-smoothing:antialiased}
 .app{max-width:600px;margin:0 auto;height:100vh;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
 .ac{flex:1;overflow:hidden;display:flex;flex-direction:column}
-.tb{flex-shrink:0;background:var(--sf);border-top:1px solid var(--bd);padding:4px 0 calc(var(--sb)+4px);display:flex;z-index:100}
+.tb{flex-shrink:0;background:var(--sf);border-top:1px solid var(--bd);padding:6px 0 calc(var(--sb)+6px);display:flex;z-index:100}
 .tt{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 2px;background:none;border:none;color:var(--tm);font-size:9px;font-family:var(--fm);cursor:pointer}.tt.active{color:var(--ac)}.tt svg{width:21px;height:21px}
 .sc{display:none;flex-direction:column;flex:1;overflow:hidden}.sc.active{display:flex}
 .scr{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px;scrollbar-width:none}.scr::-webkit-scrollbar{display:none}
 /* HOME */
-.qn{display:flex;gap:8px;margin-bottom:14px;padding-top:calc(var(--st)+8px)}.qn .qb{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 6px;background:var(--cb);border:1px solid var(--cbd);border-radius:var(--rd);cursor:pointer}.qn .qb:active{background:var(--sa);border-color:var(--ac)}.qn .qb svg{width:22px;height:22px;color:var(--ac);opacity:.7}.qn .qb span{font-size:11px;font-family:var(--fm);color:var(--tm);font-weight:600}
+.qn{display:flex;gap:8px;margin-bottom:14px;padding-top:calc(var(--st)+14px)}.qn .qb{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 6px;background:var(--cb);border:1px solid var(--cbd);border-radius:var(--rd);cursor:pointer}.qn .qb:active{background:var(--sa);border-color:var(--ac)}.qn .qb svg{width:22px;height:22px;color:var(--ac);opacity:.7}.qn .qb span{font-size:11px;font-family:var(--fm);color:var(--tm);font-weight:600}
 .sl{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--tm);font-weight:600;font-family:var(--fm);margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}.sl .lk{color:var(--ac);cursor:pointer}
 .bc{background:var(--cb);border:1px solid var(--cbd);border-radius:var(--rd);margin-bottom:6px;overflow:hidden}
 .bch{padding:8px 12px;display:flex;align-items:center;gap:6px}.bch .bi{opacity:.35;color:var(--tm)}.bch .bn{font-family:var(--fs);font-weight:400;font-size:14px;color:var(--tx);flex:1}.bch .bs{width:5px;height:5px;border-radius:1.5px}
@@ -33,12 +33,12 @@ html{height:100%;-webkit-text-size-adjust:100%}body{font-family:var(--fn);backgr
 .mmap{display:flex;flex-wrap:wrap;gap:1.5px;padding:10px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rd);cursor:pointer}.mmap:active{background:var(--sa)}.mmb{display:flex;flex-wrap:wrap;gap:1px}.mmc{width:5px;height:5px;border-radius:1px}.mms{width:3px}
 .srow{display:flex;gap:6px;margin-top:8px;margin-bottom:4px}.st{flex:1;background:var(--sf);border:1px solid var(--bd);border-radius:7px;padding:8px;text-align:center}.st .sv{font-family:var(--fs);font-size:17px;font-weight:400;color:var(--ac)}.st .sl2{font-size:8px;font-family:var(--fm);color:var(--tm);text-transform:uppercase;letter-spacing:.6px;margin-top:1px}
 /* Sub headers */
-.shd{flex-shrink:0;background:var(--sf);border-bottom:1px solid var(--bd);padding:calc(var(--st)+8px) 16px 8px;display:flex;align-items:center;gap:8px;min-height:48px}.shd .back{background:none;border:none;color:var(--ac);padding:4px;cursor:pointer;display:flex}.shd .title{font-family:var(--fs);font-size:17px;font-weight:400;color:var(--tx);flex:1}
+.shd{flex-shrink:0;background:var(--sf);border-bottom:1px solid var(--bd);padding:calc(var(--st)+12px) 16px 8px;display:flex;align-items:center;gap:8px;min-height:48px}.shd .back{background:none;border:none;color:var(--ac);padding:4px;cursor:pointer;display:flex}.shd .title{font-family:var(--fs);font-size:17px;font-weight:400;color:var(--tx);flex:1}
 .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px;margin-bottom:16px}.bbtn{background:var(--cb);border:1px solid var(--cbd);border-radius:8px;padding:9px 6px;text-align:center;font-family:var(--fs);font-size:12px;font-weight:400;color:var(--tx);cursor:pointer}.bbtn:active{background:var(--al);border-color:var(--ac)}
 .shdr{font-size:11px;font-weight:700;color:var(--tm);font-family:var(--fm);text-transform:uppercase;letter-spacing:1px;margin:14px 0 8px;display:flex;align-items:center;gap:6px}.shdr:first-child{margin-top:0}.shdr .dot{width:8px;height:8px;border-radius:2px}
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:5px;margin-bottom:16px}.cbtn{background:var(--cb);border:1px solid var(--cbd);border-radius:6px;padding:10px 4px;text-align:center;font-family:var(--fm);font-size:14px;color:var(--tx);cursor:pointer}.cbtn:active{background:var(--al)}
 /* READER */
-.rnav{flex-shrink:0;background:var(--sf);border-bottom:1px solid var(--bd);padding:calc(var(--st)+6px) 10px 6px;display:flex;align-items:center;gap:4px;min-height:44px;z-index:50}.rnav .rb2{background:none;border:none;color:var(--ac);padding:4px;cursor:pointer;display:flex;align-items:center;flex-shrink:0;opacity:.6}.rnav .rb2:active{opacity:1}.rnav .sep{width:1px;height:20px;background:var(--bd);margin:0 4px;flex-shrink:0}.rnav .chb{background:none;border:none;color:var(--ac);font-size:12px;font-weight:600;cursor:pointer;padding:4px 6px;display:flex;align-items:center;gap:2px;flex-shrink:0;font-family:var(--fm)}.rnav .chb:disabled{opacity:.2}.rnav .rtitle{flex:1;text-align:center;font-family:var(--fs);font-size:14px;font-weight:400;color:var(--tx);cursor:pointer}.rnav .thb{background:none;border:none;color:var(--ac);padding:4px;cursor:pointer;display:flex;opacity:.4;flex-shrink:0}.rnav .thb:active{opacity:1}.rnav .thb.on{opacity:.85}
+.rnav{flex-shrink:0;background:var(--sf);border-bottom:1px solid var(--bd);padding:calc(var(--st)+10px) 10px 6px;display:flex;align-items:center;gap:4px;min-height:44px;z-index:50}.rnav .rb2{background:none;border:none;color:var(--ac);padding:4px;cursor:pointer;display:flex;align-items:center;flex-shrink:0;opacity:.6}.rnav .rb2:active{opacity:1}.rnav .sep{width:1px;height:20px;background:var(--bd);margin:0 4px;flex-shrink:0}.rnav .chb{background:none;border:none;color:var(--ac);font-size:12px;font-weight:600;cursor:pointer;padding:4px 6px;display:flex;align-items:center;gap:2px;flex-shrink:0;font-family:var(--fm)}.rnav .chb:disabled{opacity:.2}.rnav .rtitle{flex:1;text-align:center;font-family:var(--fs);font-size:14px;font-weight:400;color:var(--tx);cursor:pointer}.rnav .thb{background:none;border:none;color:var(--ac);padding:4px;cursor:pointer;display:flex;opacity:.4;flex-shrink:0}.rnav .thb:active{opacity:1}.rnav .thb.on{opacity:.85}
 .rnav .vbtn{background:var(--sa);border:1px solid var(--bd);border-radius:4px;color:var(--ac);font-size:9px;font-family:var(--fm);font-weight:600;padding:3px 6px;cursor:pointer;flex-shrink:0;outline:none;text-transform:uppercase;letter-spacing:.5px;margin-left:2px;margin-right:6px;-webkit-tap-highlight-color:transparent;user-select:none}.rnav .vbtn:active{opacity:.7}
 .rtbar{flex-shrink:0;padding:4px 16px;border-bottom:1px solid var(--bd);background:var(--al);display:flex;align-items:center;gap:5px;font-size:10px;color:var(--ac);font-weight:600;font-family:var(--fm)}
 .rtbar.paused{background:var(--sf);border-bottom-color:var(--dg);cursor:pointer}.rtbar.paused span{opacity:.5}
@@ -58,8 +58,8 @@ html{height:100%;-webkit-text-size-adjust:100%}body{font-family:var(--fn);backgr
 .rbody .chtitle{font-size:calc(var(--fz)*0.8);font-style:italic;color:var(--tm);margin:4px 0 4px;clear:both}
 .rl{text-align:center;padding:40px;color:var(--tm);font-family:var(--fs)}
 /* Thread prompt */
-.tpr{position:fixed;left:50%;width:100%;max-width:600px;background:var(--sf);border-top:1px solid var(--bd);border-radius:14px 14px 0 0;padding:12px 16px 14px;z-index:90;box-shadow:0 -4px 20px rgba(0,0,0,.25);transition:bottom .45s cubic-bezier(.22,1,.36,1);transform:translateX(-50%);bottom:-200px;pointer-events:none}
-.tpr.show{bottom:calc(var(--sb) + 44px);pointer-events:auto}
+.tpr{position:fixed;left:50%;width:100%;max-width:600px;background:var(--sf);border-top:1px solid var(--bd);border-radius:14px 14px 0 0;padding:12px 16px calc(var(--sb) + 52px);z-index:110;box-shadow:0 -4px 20px rgba(0,0,0,.25);transition:bottom .45s cubic-bezier(.22,1,.36,1);transform:translateX(-50%);bottom:-300px;pointer-events:none}
+.tpr.show{bottom:0;pointer-events:auto}
 .tpr .tt2{font-family:var(--fs);font-size:13px;color:var(--tx);margin-bottom:10px;line-height:1.3;padding-right:20px}
 .tpr .tbs{display:flex;gap:6px;flex-wrap:wrap}
 .tpr .tb2{padding:7px 12px;border-radius:7px;font-size:12px;font-weight:400;font-family:var(--fs);cursor:pointer;border:none;white-space:nowrap}.tpr .tb2:active{opacity:.7}.tpr .tb2.p{background:var(--ac);color:#1A1400}.tpr .tb2.s{background:transparent;color:var(--tm);border:1px solid var(--bd)}.tpr .tb2.d{background:var(--dg);color:#FFF}
@@ -102,6 +102,7 @@ select.ei,select.fi{-webkit-appearance:none;appearance:none;background-image:url
       <div class="sro"><div><div class="label">Export</div></div><button class="btn bo" onclick="expD()" style="padding:5px 10px;font-size:11px">Export</button></div>
       <div class="sro"><div><div class="label">Import</div></div><button class="btn bo" onclick="document.getElementById('iF').click()" style="padding:5px 10px;font-size:11px">Import</button><input type="file" id="iF" accept=".json" style="display:none" onchange="impD(event)"></div>
       <div class="sro"><div><div class="label" style="color:var(--dg)">Reset All</div></div><button class="btn bd" onclick="confirmRst()" style="padding:5px 10px;font-size:11px">Reset</button></div>
+      <div style="text-align:center;padding:20px 0 8px;font-size:10px;color:var(--tm);font-family:var(--fm)" id="verLbl"></div>
     </div></div>
   </main>
   <nav class="tb"><button class="tt active" onclick="goTab('home',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</button><button class="tt" onclick="goTab('coverage',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Coverage</button><button class="tt" onclick="togSrch()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button><button class="tt" onclick="goMan()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Log</button><button class="tt" onclick="goTab('settings')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.32 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</button></nav>
@@ -110,6 +111,7 @@ select.ei,select.fi{-webkit-appearance:none;appearance:none;background-image:url
 <div class="spnl" id="sP"><div class="sph"></div><div class="spi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" placeholder="Search the Bible..." id="sIn" oninput="dSr()"><button class="spc" onclick="togSrch()">Cancel</button></div><div class="spr" id="sRs"></div></div>
 <div class="mo" id="modal"><div class="md"><div class="mt" id="mTi"></div><div class="mx" id="mTx"></div><div class="mb"><button class="mc" onclick="clModal()">Cancel</button><button class="mdg" id="mAc">Delete</button></div></div></div>
 <div class="toast" id="toast"></div>
+<div class="mo" id="updMo"><div class="md" style="text-align:left"><div class="mt" style="text-align:center">Update Available</div><div class="mx" style="text-align:center;margin-bottom:12px">A new version is ready to install. To protect your data, please export a backup first.</div><div class="mb" style="flex-direction:column;gap:8px"><button class="bp" style="width:100%;padding:10px;border-radius:8px;font-size:14px;font-family:var(--fs);cursor:pointer;border:none" onclick="expD();document.getElementById('updOk').style.display=''">Export My Data</button><button id="updOk" class="mc" style="display:none;width:100%;padding:10px;border-radius:8px;font-size:14px;font-family:var(--fs);cursor:pointer;border:none;background:var(--sa);color:var(--tx)" onclick="applyUpd()">Install Update</button><button class="mc" style="width:100%;padding:10px;border-radius:8px;font-size:13px;font-family:var(--fs);cursor:pointer;border:none;background:transparent;color:var(--tm)" onclick="skipUpd()">Skip for now</button></div></div></div>
 <script>
 // ===== BOOK DATA =====
 var BK=[{id:'GEN',n:'Genesis',a:'Gen',ch:50,s:'law'},{id:'EXO',n:'Exodus',a:'Exo',ch:40,s:'law'},{id:'LEV',n:'Leviticus',a:'Lev',ch:27,s:'law'},{id:'NUM',n:'Numbers',a:'Num',ch:36,s:'law'},{id:'DEU',n:'Deuteronomy',a:'Deu',ch:34,s:'law'},{id:'JOS',n:'Joshua',a:'Jos',ch:24,s:'history'},{id:'JDG',n:'Judges',a:'Jdg',ch:21,s:'history'},{id:'RUT',n:'Ruth',a:'Rth',ch:4,s:'history'},{id:'1SA',n:'1 Samuel',a:'1Sa',ch:31,s:'history'},{id:'2SA',n:'2 Samuel',a:'2Sa',ch:24,s:'history'},{id:'1KI',n:'1 Kings',a:'1Ki',ch:22,s:'history'},{id:'2KI',n:'2 Kings',a:'2Ki',ch:25,s:'history'},{id:'1CH',n:'1 Chronicles',a:'1Ch',ch:29,s:'history'},{id:'2CH',n:'2 Chronicles',a:'2Ch',ch:36,s:'history'},{id:'EZR',n:'Ezra',a:'Ezr',ch:10,s:'history'},{id:'NEH',n:'Nehemiah',a:'Neh',ch:13,s:'history'},{id:'EST',n:'Esther',a:'Est',ch:10,s:'history'},{id:'JOB',n:'Job',a:'Job',ch:42,s:'poetry'},{id:'PSA',n:'Psalms',a:'Psa',ch:150,s:'poetry'},{id:'PRO',n:'Proverbs',a:'Pro',ch:31,s:'poetry'},{id:'ECC',n:'Ecclesiastes',a:'Ecc',ch:12,s:'poetry'},{id:'SNG',n:'Song of Solomon',a:'Sng',ch:8,s:'poetry'},{id:'ISA',n:'Isaiah',a:'Isa',ch:66,s:'prophets'},{id:'JER',n:'Jeremiah',a:'Jer',ch:52,s:'prophets'},{id:'LAM',n:'Lamentations',a:'Lam',ch:5,s:'prophets'},{id:'EZK',n:'Ezekiel',a:'Eze',ch:48,s:'prophets'},{id:'DAN',n:'Daniel',a:'Dan',ch:12,s:'prophets'},{id:'HOS',n:'Hosea',a:'Hos',ch:14,s:'prophets'},{id:'JOL',n:'Joel',a:'Joe',ch:3,s:'prophets'},{id:'AMO',n:'Amos',a:'Amo',ch:9,s:'prophets'},{id:'OBA',n:'Obadiah',a:'Oba',ch:1,s:'prophets'},{id:'JON',n:'Jonah',a:'Jon',ch:4,s:'prophets'},{id:'MIC',n:'Micah',a:'Mic',ch:7,s:'prophets'},{id:'NAM',n:'Nahum',a:'Nah',ch:3,s:'prophets'},{id:'HAB',n:'Habakkuk',a:'Hab',ch:3,s:'prophets'},{id:'ZEP',n:'Zephaniah',a:'Zep',ch:3,s:'prophets'},{id:'HAG',n:'Haggai',a:'Hag',ch:2,s:'prophets'},{id:'ZEC',n:'Zechariah',a:'Zec',ch:14,s:'prophets'},{id:'MAL',n:'Malachi',a:'Mal',ch:4,s:'prophets'},{id:'MAT',n:'Matthew',a:'Mat',ch:28,s:'gospels'},{id:'MRK',n:'Mark',a:'Mrk',ch:16,s:'gospels'},{id:'LUK',n:'Luke',a:'Luk',ch:24,s:'gospels'},{id:'JHN',n:'John',a:'Jhn',ch:21,s:'gospels'},{id:'ACT',n:'Acts',a:'Act',ch:28,s:'acts'},{id:'ROM',n:'Romans',a:'Rom',ch:16,s:'epistles'},{id:'1CO',n:'1 Corinthians',a:'1Co',ch:16,s:'epistles'},{id:'2CO',n:'2 Corinthians',a:'2Co',ch:13,s:'epistles'},{id:'GAL',n:'Galatians',a:'Gal',ch:6,s:'epistles'},{id:'EPH',n:'Ephesians',a:'Eph',ch:6,s:'epistles'},{id:'PHP',n:'Philippians',a:'Php',ch:4,s:'epistles'},{id:'COL',n:'Colossians',a:'Col',ch:4,s:'epistles'},{id:'1TH',n:'1 Thessalonians',a:'1Th',ch:5,s:'epistles'},{id:'2TH',n:'2 Thessalonians',a:'2Th',ch:3,s:'epistles'},{id:'1TI',n:'1 Timothy',a:'1Ti',ch:6,s:'epistles'},{id:'2TI',n:'2 Timothy',a:'2Ti',ch:4,s:'epistles'},{id:'TIT',n:'Titus',a:'Tit',ch:3,s:'epistles'},{id:'PHM',n:'Philemon',a:'Phm',ch:1,s:'epistles'},{id:'HEB',n:'Hebrews',a:'Heb',ch:13,s:'epistles'},{id:'JAS',n:'James',a:'Jas',ch:5,s:'epistles'},{id:'1PE',n:'1 Peter',a:'1Pe',ch:5,s:'epistles'},{id:'2PE',n:'2 Peter',a:'2Pe',ch:3,s:'epistles'},{id:'1JN',n:'1 John',a:'1Jn',ch:5,s:'epistles'},{id:'2JN',n:'2 John',a:'2Jn',ch:1,s:'epistles'},{id:'3JN',n:'3 John',a:'3Jn',ch:1,s:'epistles'},{id:'JUD',n:'Jude',a:'Jud',ch:1,s:'epistles'},{id:'REV',n:'Revelation',a:'Rev',ch:22,s:'revelation'}];
@@ -602,10 +604,50 @@ function expD(){var d={state:S,readChapters:gRC(),exportDate:new Date().toISOStr
 function impD(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(ev){try{var d=JSON.parse(ev.target.result);if(d.state){S=Object.assign({},S,d.state);sS()}if(d.readChapters)localStorage.setItem('brc',JSON.stringify(d.readChapters));toast('Imported!');rH()}catch(e){toast('Invalid file.')}};r.readAsText(f)}
 function confirmRst(){showMod('Reset All Data','Delete all data permanently.',function(){S={threads:[],sessions:[],theme:S.theme,covOpen:true,showAll:false,fontSize:S.fontSize,version:S.version,history:[]};localStorage.removeItem('brc');sS();clModal();goTab('home')})}
 
+// ===== UPDATE SYSTEM =====
+var APP_VERSION='1.1';
+var pendingWorker=null;
+
+function checkForUpdate(){
+  if(!('serviceWorker' in navigator))return;
+  navigator.serviceWorker.register('./sw.js').then(function(reg){
+    if(reg.waiting){pendingWorker=reg.waiting;showUpdMo()}
+    reg.addEventListener('updatefound',function(){
+      var nw=reg.installing;if(!nw)return;
+      nw.addEventListener('statechange',function(){
+        if(nw.state==='installed'&&navigator.serviceWorker.controller){
+          pendingWorker=nw;showUpdMo();
+        }
+      });
+    });
+  }).catch(function(){});
+  navigator.serviceWorker.addEventListener('controllerchange',function(){
+    window.location.reload();
+  });
+}
+
+function showUpdMo(){
+  if(cur!=='home'){
+    setTimeout(showUpdMo,3000);return;
+  }
+  document.getElementById('updMo').classList.add('show');
+  document.getElementById('updOk').style.display='none';
+}
+
+function applyUpd(){
+  document.getElementById('updMo').classList.remove('show');
+  if(pendingWorker)pendingWorker.postMessage({type:'SKIP_WAITING'});
+}
+
+function skipUpd(){
+  document.getElementById('updMo').classList.remove('show');
+}
+
 async function init(){
   lS();aTh();applyFZ();rH();
   await loadVersions();
-  if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(function(){})}
+  document.getElementById('verLbl').textContent='Version '+APP_VERSION;
+  checkForUpdate();
 }
 init();
 </script>
