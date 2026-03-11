@@ -1,0 +1,15 @@
+{
+  "name": "bible-reading-tracker",
+  "version": "1.0.0",
+  "description": "A phone-first Progressive Web App for tracking Bible reading across all 66 books. Supports reading threads, verse-level position tracking, manual paper Bible entry, coverage mapping, and full offline use.",
+  "main": "process-bible.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  }
+}

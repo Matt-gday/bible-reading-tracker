@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+*.log
+*_usfm.zip
+package-lock.json
