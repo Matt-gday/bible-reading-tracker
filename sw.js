@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bible-tracker-v3';
+const CACHE_NAME = 'bible-tracker-v4';
 const BIBLE_CACHE = 'bible-data-v2';
 
 const APP_FILES = [
