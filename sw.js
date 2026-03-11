@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bible-tracker-v4';
+const CACHE_NAME = 'bible-tracker-v5';
 const BIBLE_CACHE = 'bible-data-v2';
 
 const APP_FILES = [
@@ -13,6 +13,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(APP_FILES))
   );
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
