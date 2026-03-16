@@ -95,7 +95,7 @@ select.ei,select.fi{-webkit-appearance:none;appearance:none;background-image:url
     <div class="sc" id="sSel"><div class="shd"><button class="back" onclick="selBack()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button><div class="title" id="selL">Select a book</div><button class="hbtn" id="histBtn" onclick="togHist()">History</button></div><div class="scr" id="selC"></div></div>
     <div class="sc" id="sRdr"><div class="rnav"><button class="rb2" onclick="rdrBack()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button><div class="sep"></div><button class="chb" id="rP" onclick="rNv(-1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg><span id="rPL"></span></button><span class="rtitle" id="rTi" onclick="goSel()"></span><button class="chb" id="rN" onclick="rNv(1)"><span id="rNL"></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button><div class="sep"></div><button class="thb" id="thBtn" onclick="manualTP()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button><button class="vbtn" id="vBtn" onclick="cycleVer()"></button></div><div class="rtbar" id="rTB" style="display:none" onclick="onTBClick()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span id="rTT"></span><button class="dir-tog" id="dirTog" onclick="event.stopPropagation();togDir()"></button></div><div class="rbody" id="rB"></div></div>
     <div class="sc" id="sCov"><div class="shd"><button class="back" onclick="goTab('home')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button><div class="title">Coverage</div></div><div class="scr"><div class="vtg"><button class="active" onclick="setCV('list',this)">Book List</button><button onclick="setCV('hm',this)">Heatmap</button></div><div id="cL"></div><div id="cH" style="display:none"></div></div></div>
-    <div class="sc" id="sMan"><div class="shd"><button class="back" onclick="popS()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button><div class="title">Log Paper Reading</div></div><div class="scr"><div class="fg"><label class="fl">Date</label><input type="date" class="fi" id="mD"></div><div class="fg"><label class="fl">Start Passage</label><div class="fr"><select class="fi" id="mSB" onchange="mUC('S')"></select><select class="fi" id="mSC"></select><select class="fi" id="mSV"></select></div></div><div class="fg"><label class="fl">End Passage</label><div class="fr"><select class="fi" id="mEB" onchange="mUC('E')"></select><select class="fi" id="mEC"></select><select class="fi" id="mEV"></select></div></div><div class="fg"><label class="fl">Thread</label><select class="fi" id="mTh"><option value="new">Start a new thread</option></select></div><button class="btn bp bw mt4" onclick="savMan()">Save Reading</button></div></div>
+    <div class="sc" id="sMan"><div class="shd"><button class="back" onclick="popS()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button><div class="title">Log Paper Reading</div></div><div class="scr"><div class="fg"><label class="fl">Date</label><input type="date" class="fi" id="mD"></div><div class="fg"><label class="fl">Start Passage</label><div class="fr"><select class="fi" id="mSB" onchange="mUC('S');mThreadChanged()"></select><select class="fi" id="mSC"></select><select class="fi" id="mSV"></select></div></div><div class="fg"><label class="fl">End Passage</label><div class="fr"><select class="fi" id="mEB" onchange="mUC('E');mThreadChanged()"></select><select class="fi" id="mEC"></select><select class="fi" id="mEV"></select></div></div><div class="fg"><label class="fl">Thread</label><select class="fi" id="mTh" onchange="mThreadChanged()"><option value="new">Start a new thread</option></select></div><div class="fg" id="mDirW" style="display:none"><label class="fl">Direction</label><select class="fi" id="mDir"><option value="forward">Forward</option><option value="backward">Backward</option></select></div><button class="btn bp bw mt4" onclick="savMan()">Save Reading</button></div></div>
     <div class="sc" id="sEdit"><div class="shd"><button class="back" onclick="popS()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button><div class="title" id="editT">Edit Thread</div></div><div class="scr"><div class="ef"><label>Start Position</label><div class="efr"><select class="ei" id="eSC"></select><select class="ei" id="eSV"></select></div></div><div class="ef"><label>Current Position</label><div class="efr"><select class="ei" id="eCC"></select><select class="ei" id="eCV"></select></div></div><div class="ef" id="eDW"><label>Direction</label><select class="ei" id="eDir"><option value="forward">Forward</option><option value="backward">Backward</option></select></div><button class="btn bp bw" onclick="savEdit()">Save Changes</button><button class="btn bd bw mt4" onclick="confirmDel()">Delete Thread</button></div></div>
     <div class="sc" id="sSet" style="display:none"></div>
   </main>
@@ -125,6 +125,9 @@ function gB(id){return BK.find(function(b){return b.id===id})}
 function bFN(bid){return gB(bid).n.toLowerCase().replace(/\s+/g,'')}
 function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}
 function valP(sc,sv,ec,ev){return ec>sc||(ec===sc&&ev>=sv)}
+function valPR(sc,sv,ec,ev,dir){if(dir==='backward')return ec<sc||(ec===sc&&ev<=sv);return valP(sc,sv,ec,ev)}
+async function verseMax(bid,ch){var vs=await fCh(bid,ch);if(vs&&vs.length){var lv=vs[vs.length-1];return (lv&&lv.num)||vs.length}return 176}
+function fillVerseSel(el,maxV,selV){el.innerHTML='';for(var i=1;i<=maxV;i++)el.innerHTML+='<option value="'+i+'"'+(i===selV?' selected':'')+'>'+i+'</option>'}
 function fmtPos(t){var bk=gB(t.bookId);if(t.bookId==='PSA'){var a=t.direction==='backward'?'\u2190':'\u2192';return bk.n+' '+t.startChapter+' '+a+' '+t.currentChapter}return bk.n+' '+t.startChapter+':'+(t.startVerse||1)+' \u2192 '+t.currentChapter+':'+(t.currentVerse||1)}
 function fmtRange(t){if(t.bookId==='PSA'){var a=t.direction==='backward'?'\u2190':'\u2192';return t.startChapter+' '+a+' '+t.currentChapter}return t.startChapter+':'+(t.startVerse||1)+' \u2192 '+t.currentChapter+':'+(t.currentVerse||1)}
 
@@ -221,6 +224,7 @@ function clModal(){document.getElementById('modal').classList.remove('show')}
 // ===== NAVIGATION =====
 var cur='home',stk=[];
 var SM={home:'Home',coverage:'Cov',manual:'Man',reader:'Rdr',selector:'Sel',settings:'Set',edit:'Edit'};
+var lastPausedTid=null;
 function recHist(){
   if(!rS.bid)return;var tv=gTV();
   if(!S.history)S.history=[];
@@ -229,7 +233,7 @@ function recHist(){
   S.history.unshift({bid:rS.bid,ch:tv.ch,v:tv.v,ts:Date.now(),tid:rS.tid||null});
   sS();
 }
-function leaveReader(){recHist();dTP();clearTimeout(rS.tmr);rS.ps=false;rS.threadPaused=false}
+function leaveReader(){if(rS.threadPaused&&rS.tid)lastPausedTid=rS.tid;recHist();dTP();clearTimeout(rS.tmr);rS.ps=false;rS.threadPaused=false}
 function goTab(t,btn){leaveReader();if(setOpen)togSet();if(srchOpen)togSrch();if(btn){document.querySelectorAll('.tt').forEach(function(b){b.classList.remove('active')});btn.classList.add('active')}else document.querySelectorAll('.tt').forEach(function(b,i){b.classList.toggle('active',['home','coverage','search','manual'][i]===t)});cur=t;stk=[];showS('s'+SM[t]);if(t==='home')rH();if(t==='coverage')rCov()}
 function showS(id){document.querySelectorAll('.sc').forEach(function(s){s.classList.remove('active')});document.getElementById(id).classList.add('active')}
 function pushS(id){if(setOpen)togSet();if(srchOpen)togSrch();stk.push({scr:cur});showS('s'+(SM[id]||id));cur=id}
@@ -252,12 +256,13 @@ a.innerHTML=html;rMM();rSts()}
 function rMM(){var rd=gRC(),h='',ls='';for(var bk of BK){if(bk.s!==ls&&ls)h+='<div class="mms"></div>';ls=bk.s;var c=SC[bk.s],br=rd[bk.id]||{};h+='<div class="mmb">';for(var i=1;i<=bk.ch;i++){var isR=!!br[i];h+='<div class="mmc" style="background:'+(isR?c:'var(--ur)')+';opacity:'+(isR?'.85':'1')+'"></div>'}h+='</div>'}document.getElementById('mm').innerHTML=h}
 function rSts(){var rd=gRC(),tr=0,bs=0;for(var bk of BK){var c=Object.keys(rd[bk.id]||{}).length;if(c>0){bs++;tr+=c}}var p=Math.round(tr/TCH*100);document.getElementById('stR').innerHTML='<div class="st"><div class="sv">'+tr+'</div><div class="sl2">Chapters</div></div><div class="st"><div class="sv">'+bs+'/66</div><div class="sl2">Books</div></div><div class="st"><div class="sv">'+p+'%</div><div class="sl2">Coverage</div></div>';document.getElementById('cvS').innerHTML='<span class="c"><span class="v">'+tr+'</span> ch</span><span class="c"><span class="v">'+bs+'</span>/66</span><span class="c"><span class="v">'+p+'%</span></span>';document.getElementById('cvB').classList.toggle('open',!!S.covOpen);document.getElementById('cvA').classList.toggle('open',!!S.covOpen)}
 function togCov(){S.covOpen=!S.covOpen;sS();rSts()}
-function oTh(tid){var t=S.threads.find(function(x){return x.id===tid});if(t)openR(t.bookId,t.currentChapter,tid,t.currentVerse||1)}
+function oTh(tid){var t=S.threads.find(function(x){return x.id===tid});if(!t)return;if(lastPausedTid===tid){lastPausedTid=null;openR(t.bookId,t.currentChapter,tid,t.currentVerse||1);return}if(t.bookId==='PSA'&&t.direction==='backward'){var nch=Math.max(1,(t.currentChapter||1)-1);openR(t.bookId,nch,tid,1);return}openR(t.bookId,t.currentChapter,tid,t.currentVerse||1)}
 
 // ===== EDIT =====
 var eTid=null;
-function goEdit(tid){eTid=tid;var t=S.threads.find(function(x){return x.id===tid});if(!t)return;var bk=gB(t.bookId);document.getElementById('editT').textContent='Edit '+bk.n;pushS('edit');['eSC','eCC'].forEach(function(id,idx){var el=document.getElementById(id);el.innerHTML='';for(var i=1;i<=bk.ch;i++)el.innerHTML+='<option value="'+i+'"'+(i===(idx===0?t.startChapter:t.currentChapter)?' selected':'')+'>'+i+'</option>'});['eSV','eCV'].forEach(function(id,idx){var el=document.getElementById(id);el.innerHTML='';var val=idx===0?(t.startVerse||1):(t.currentVerse||1);for(var i=1;i<=50;i++)el.innerHTML+='<option value="'+i+'"'+(i===val?' selected':'')+'>'+i+'</option>'});document.getElementById('eDW').style.display=t.bookId==='PSA'?'':'none';document.getElementById('eDir').value=t.direction||'forward'}
-function savEdit(){var t=S.threads.find(function(x){return x.id===eTid});if(!t)return;var sc=+document.getElementById('eSC').value,sv=+document.getElementById('eSV').value,ec=+document.getElementById('eCC').value,ev=+document.getElementById('eCV').value;if(!valP(sc,sv,ec,ev)){toast('End must be after start');return}t.startChapter=sc;t.startVerse=sv;t.currentChapter=ec;t.currentVerse=ev;if(t.bookId==='PSA')t.direction=document.getElementById('eDir').value;sS();tryM(t.bookId);popS()}
+async function goEdit(tid){eTid=tid;var t=S.threads.find(function(x){return x.id===tid});if(!t)return;var bk=gB(t.bookId);document.getElementById('editT').textContent='Edit '+bk.n;pushS('edit');['eSC','eCC'].forEach(function(id,idx){var el=document.getElementById(id);el.innerHTML='';for(var i=1;i<=bk.ch;i++)el.innerHTML+='<option value="'+i+'"'+(i===(idx===0?t.startChapter:t.currentChapter)?' selected':'')+'>'+i+'</option>'});document.getElementById('eDW').style.display='none';document.getElementById('eDir').value=t.direction||'forward';document.getElementById('eSC').onchange=function(){eUV('S')};document.getElementById('eCC').onchange=function(){eUV('C')};await eUV('S',t.startVerse||1);await eUV('C',t.currentVerse||1)}
+async function eUV(which,selV){var t=S.threads.find(function(x){return x.id===eTid});if(!t)return;var chEl=document.getElementById(which==='S'?'eSC':'eCC'),vEl=document.getElementById(which==='S'?'eSV':'eCV'),ch=+chEl.value,mx=await verseMax(t.bookId,ch),pick=selV||Math.min(+vEl.value||1,mx);fillVerseSel(vEl,mx,pick)}
+function savEdit(){var t=S.threads.find(function(x){return x.id===eTid});if(!t)return;var sc=+document.getElementById('eSC').value,sv=+document.getElementById('eSV').value,ec=+document.getElementById('eCC').value,ev=+document.getElementById('eCV').value,dir=t.direction||'forward';if(!valPR(sc,sv,ec,ev,dir)){toast(dir==='backward'?'End must be before start':'End must be after start');return}t.startChapter=sc;t.startVerse=sv;t.currentChapter=ec;t.currentVerse=ev;sS();tryM(t.bookId);popS()}
 function confirmDel(){showMod('Delete Thread','This will permanently remove this thread.',function(){S.threads=S.threads.filter(function(t){return t.id!==eTid});sS();clModal();popS()})}
 
 // ===== SELECTOR =====
@@ -354,7 +359,7 @@ function selBk(bid){var bk=gB(bid);document.getElementById('selL').textContent=b
 function selCh(bid,ch){savedReading=null;openR(bid,ch)}
 
 // ===== READER =====
-var rS={bid:null,ch:1,tid:null,tmr:null,ps:false,lCh:[],loading:false,startCh:null,startV:1,lastTU:0,threadPaused:false,safePos:null};
+var rS={bid:null,ch:1,tid:null,tmr:null,ps:false,lCh:[],loading:false,loadingPrev:false,startCh:null,startV:1,lastTU:0,threadPaused:false,safePos:null};
 
 function rChHTML(vs,cn){
   var h='<div class="chm" id="chm'+cn+'" data-ch="'+cn+'"></div>';
@@ -404,6 +409,7 @@ function rChHTML(vs,cn){
 
 function openR(bid,ch,tid,verse){
   rS.bid=bid;rS.ch=ch;rS.tid=tid||null;rS.ps=false;rS.lCh=[];rS.loading=false;
+  rS.loadingPrev=false;
   rS.scrollToVerse=verse||null;rS.startCh=ch;rS.startV=verse||1;
   rS.lastTU=Date.now();rS.threadPaused=false;rS.safePos=null;
   RT.reset();dTP();if(srchOpen)togSrch();pushS('reader');updVerSel();doR();
@@ -415,6 +421,18 @@ async function doR(){
   var vs=await fCh(rS.bid,ch);
   if(!vs){body.innerHTML='<div class="rl">Could not load chapter.</div>';return}
   rS.lCh=[ch];RT.arrive(ch,vs.length);body.innerHTML=rChHTML(vs,ch);mRd(rS.bid,ch);
+  var thr=rS.tid?S.threads.find(function(x){return x.id===rS.tid}):null;
+  if(thr&&thr.bookId==='PSA'&&thr.direction==='backward'&&ch>1){
+    var pch=ch-1,pvs=await fCh(rS.bid,pch);
+    if(pvs){
+      var oldH=body.scrollHeight;
+      body.innerHTML=rChHTML(pvs,pch)+body.innerHTML;
+      rS.lCh.unshift(pch);
+      RT.arrive(pch,pvs.length);
+      mRd(rS.bid,pch);
+      body.scrollTop+=body.scrollHeight-oldH;
+    }
+  }
   if(!rS.tid&&!rS.ps){clearTimeout(rS.tmr);rS.tmr=setTimeout(function(){rS.ps=true;showTP()},10000)}
   setupRScroll();await fillVP();
   if(rS.scrollToVerse&&rS.scrollToVerse>1){
@@ -430,7 +448,7 @@ async function fillVP(){var body=document.getElementById('rB'),bk=gB(rS.bid),mx=
 
 function updRH(ch){var bk=gB(rS.bid);document.getElementById('rTi').textContent=bk.n+' '+ch;document.getElementById('rP').disabled=ch<=1;document.getElementById('rN').disabled=ch>=bk.ch;document.getElementById('rPL').textContent=ch>1?''+(ch-1):'';document.getElementById('rNL').textContent=ch<bk.ch?''+(ch+1):''}
 function updThBtn(){document.getElementById('thBtn').classList.toggle('on',!!rS.tid)}
-function updTB(){var bar=document.getElementById('rTB'),tog=document.getElementById('dirTog');if(rS.tid){var t=S.threads.find(function(x){return x.id===rS.tid});if(t){bar.style.display='flex';var lbl=fmtPos(t);if(rS.threadPaused)lbl+=' \u00b7 PAUSED';document.getElementById('rTT').textContent=lbl;bar.classList.toggle('paused',rS.threadPaused);if(t.bookId==='PSA'&&!rS.threadPaused){tog.style.display='inline-block';tog.textContent=t.direction==='backward'?'\u2192 Switch to forwards':'\u2190 Switch to backwards'}else tog.style.display='none'}}else{bar.style.display='none';bar.classList.remove('paused')}}
+function updTB(){var bar=document.getElementById('rTB'),tog=document.getElementById('dirTog');if(rS.tid){var t=S.threads.find(function(x){return x.id===rS.tid});if(t){bar.style.display='flex';var lbl=fmtPos(t);if(rS.threadPaused)lbl+=' \u00b7 PAUSED';document.getElementById('rTT').textContent=lbl;bar.classList.toggle('paused',rS.threadPaused);tog.style.display='none'}}else{bar.style.display='none';bar.classList.remove('paused')}}
 
 function gTV(){
   var body=document.getElementById('rB'),bR=body.getBoundingClientRect();
@@ -449,33 +467,50 @@ function gTV(){
   return{ch:rS.ch,v:1};
 }
 
-function togDir(){if(!rS.tid)return;var t=S.threads.find(function(x){return x.id===rS.tid});if(!t||t.bookId!=='PSA')return;var hasP=t.startChapter!==t.currentChapter;var nd=t.direction==='backward'?'forward':'backward';var nl=nd==='backward'?'backwards':'forwards';if(hasP){showMod('Switch to '+nl+'?','Progress (Ps '+fmtRange(t)+') will be reset.',function(){t.direction=nd;t.startChapter=rS.ch;t.currentChapter=rS.ch;t.currentVerse=1;sS();updTB();clModal()})}else{t.direction=nd;sS();updTB()}}
+function togDir(){return}
 
 var rScFn=null;
 function setupRScroll(){var body=document.getElementById('rB');if(rScFn)body.removeEventListener('scroll',rScFn);
 rScFn=async function(){
+  var bk=gB(rS.bid),mn=Math.min.apply(null,rS.lCh);
+  if(mn>1&&!rS.loadingPrev&&body.scrollTop<=500){
+    rS.loadingPrev=true;var pc=mn-1;
+    if(rS.lCh.indexOf(pc)<0){
+      var oldTopH=body.scrollHeight,prevVs=await fCh(rS.bid,pc);
+      if(prevVs){
+        body.insertAdjacentHTML('afterbegin',rChHTML(prevVs,pc));
+        rS.lCh.unshift(pc);
+        RT.arrive(pc,prevVs.length);
+        mRd(rS.bid,pc);
+        body.scrollTop+=body.scrollHeight-oldTopH;
+      }
+    }
+    rS.loadingPrev=false;
+  }
   var markers=body.querySelectorAll('.chm'),vc=rS.ch;
   for(var m of markers){if(m.getBoundingClientRect().top<=body.getBoundingClientRect().top+60)vc=+m.dataset.ch;else break}
   var vns=body.querySelectorAll('.vn[data-ch="'+vc+'"]');
   for(var v of vns){if(v.getBoundingClientRect().bottom<=body.getBoundingClientRect().bottom)RT.upV(vc,+v.dataset.v)}
-  if(rS.tid&&!rS.threadPaused){
+  if(rS.tid){
     var tv=gTV();
     var t=S.threads.find(function(x){return x.id===rS.tid});
-    if(t){
+    if(t&&!rS.threadPaused){
       var now=Date.now();
       var curPos=t.currentChapter*1000+(t.currentVerse||1);
       var newPos=tv.ch*1000+tv.v;
       var absJump=Math.abs(newPos-curPos);
       var timeSince=now-(rS.lastTU||0);
-      if(absJump>3&&timeSince<2000){
+      var chapterJump=Math.abs(tv.ch-t.currentChapter);
+      if(chapterJump>=1&&absJump>500&&timeSince<1500){
         rS.threadPaused=true;
         if(rS.safePos){t.currentChapter=rS.safePos.ch;t.currentVerse=rS.safePos.v;sS()}
         updTB();
       }else{
         var shouldUpdate=false;
         if(t.bookId==='PSA'){
-          if(t.direction==='backward'&&tv.ch<=t.currentChapter)shouldUpdate=true;
-          else if(t.direction!=='backward'&&tv.ch>=t.currentChapter)shouldUpdate=true;
+          if(t.direction==='backward'){
+            if(tv.ch<t.currentChapter||(tv.ch===t.currentChapter&&tv.v<=t.currentVerse))shouldUpdate=true;
+          }else if(tv.ch>=t.currentChapter)shouldUpdate=true;
         }else{
           if(tv.ch>t.currentChapter||(tv.ch===t.currentChapter&&tv.v>=t.currentVerse))shouldUpdate=true;
         }
@@ -489,7 +524,7 @@ rScFn=async function(){
     var vcLen=bkData&&bkData.chapters[String(vc)]?bkData.chapters[String(vc)].verses.length:0;
     RT.arrive(vc,vcLen);
   }
-  var bk=gB(rS.bid),mx=Math.max.apply(null,rS.lCh);
+  var mx=Math.max.apply(null,rS.lCh);
   if(mx<bk.ch&&!rS.loading&&body.scrollTop+body.clientHeight>=body.scrollHeight-500){
     rS.loading=true;var nc=mx+1;
     if(rS.lCh.indexOf(nc)<0){rS.lCh.push(nc);var vs=await fCh(rS.bid,nc);if(vs){body.innerHTML+=rChHTML(vs,nc);RT.arrive(nc,vs.length);mRd(rS.bid,nc);if(nc+1<=bk.ch)fCh(rS.bid,nc+1)}}
@@ -544,9 +579,9 @@ function showTP(){
     var t=S.threads.find(function(x){return x.id===rS.tid});
     if(rS.threadPaused){
       document.getElementById('tpT').textContent='Thread paused at '+bk.n+' '+t.currentChapter+':'+(t.currentVerse||1);
-      var h='<button class="tb2 p" onclick="resumeThread()">Resume & go to last read</button>';
-      h+='<button class="tb2 d" onclick="stopThread()">Stop tracking</button>';
-      h+='<button class="tb2 s" onclick="dTP()">Keep browsing</button>';
+      var h='<button class="tb2 p" onclick="startNewThreadHere()">Start new thread here</button>';
+      h+='<button class="tb2 s" onclick="resumeThread()">Go to last read</button>';
+      h+='<button class="tb2 s" onclick="dTP()">Stay paused</button>';
     }else{
       document.getElementById('tpT').textContent=fmtPos(t);
       var h='<button class="tb2 d" onclick="stopThread()">Stop tracking</button>';
@@ -584,6 +619,13 @@ function resumeThread(){
   }
   updTB();
 }
+function startNewThreadHere(){
+  dTP();var t=S.threads.find(function(x){return x.id===rS.tid});if(!t)return;
+  var tv=gTV(),id='t_'+Date.now();
+  S.threads.push({id:id,bookId:t.bookId,startChapter:tv.ch,startVerse:tv.v,currentChapter:tv.ch,currentVerse:tv.v,direction:t.direction||'forward',sessions:[],created:new Date().toISOString()});
+  rS.tid=id;rS.threadPaused=false;rS.lastTU=Date.now();rS.safePos={ch:tv.ch,v:tv.v};
+  sS();updTB();updThBtn();rH();
+}
 function stopThread(){recHist();rS.tid=null;rS.threadPaused=false;sS();dTP();updTB();updThBtn()}
 function onTBClick(){if(rS.threadPaused)showTP()}
 
@@ -593,10 +635,11 @@ function rCL(){var rd=gRC(),h='',ls='';for(var bk of BK){if(bk.s!==ls){h+='<div 
 function rCH(){var rd=gRC(),h='<div class="hg2">';for(var bk of BK){var c=SC[bk.s],br=rd[bk.id]||{},tr=Object.keys(br).length,rat=tr/bk.ch,isR=tr>0;h+='<div class="hc" style="background:'+(isR?c:'var(--ur)')+';opacity:'+(isR?(.4+rat*.6):1)+'" onclick="openR(\''+bk.id+'\',1)"></div>'}h+='</div>';document.getElementById('cH').innerHTML=h}
 
 // ===== MANUAL ENTRY =====
-function goMan(){pushS('manual');document.getElementById('mD').value=new Date().toISOString().split('T')[0];var o=BK.map(function(b){return '<option value="'+b.id+'">'+b.n+'</option>'}).join('');document.getElementById('mSB').innerHTML=o;document.getElementById('mEB').innerHTML=o;mUC('S');mUC('E');var ts=document.getElementById('mTh');ts.innerHTML='<option value="new">Start a new thread</option>';S.threads.forEach(function(t){ts.innerHTML+='<option value="'+t.id+'">'+fmtPos(t)+'</option>'})}
+function goMan(){pushS('manual');document.getElementById('mD').value=new Date().toISOString().split('T')[0];var o=BK.map(function(b){return '<option value="'+b.id+'">'+b.n+'</option>'}).join('');document.getElementById('mSB').innerHTML=o;document.getElementById('mEB').innerHTML=o;mUC('S');mUC('E');var ts=document.getElementById('mTh');ts.innerHTML='<option value="new">Start a new thread</option>';S.threads.forEach(function(t){ts.innerHTML+='<option value="'+t.id+'">'+fmtPos(t)+'</option>'});mThreadChanged()}
+function mThreadChanged(){var tv=document.getElementById('mTh').value,sb=document.getElementById('mSB').value,eb=document.getElementById('mEB').value,wrap=document.getElementById('mDirW'),dirSel=document.getElementById('mDir');if(tv==='new'){var show=sb==='PSA'&&eb==='PSA';wrap.style.display=show?'':'none';if(!show)dirSel.value='forward';return}var t=S.threads.find(function(x){return x.id===tv});if(t&&t.bookId==='PSA'){wrap.style.display='';dirSel.value=t.direction||'forward'}else{wrap.style.display='none';dirSel.value='forward'}}
 function mUC(w){var bid=document.getElementById('m'+w+'B').value,bk=gB(bid),s=document.getElementById('m'+w+'C');s.innerHTML='';for(var i=1;i<=bk.ch;i++)s.innerHTML+='<option value="'+i+'">'+i+'</option>';mUV(w)}
-function mUV(w){var s=document.getElementById('m'+w+'V');s.innerHTML='';for(var i=1;i<=50;i++)s.innerHTML+='<option value="'+i+'">'+i+'</option>'}
-function savMan(){var sb=document.getElementById('mSB').value,sc=+document.getElementById('mSC').value,sv=+document.getElementById('mSV').value,eb=document.getElementById('mEB').value,ec=+document.getElementById('mEC').value,ev=+document.getElementById('mEV').value,tv=document.getElementById('mTh').value;if(sb===eb&&!valP(sc,sv,ec,ev)){toast('End must be after start');return}var d=document.getElementById('mD').value,sess={id:'s_'+Date.now(),date:d,startBookId:sb,startChapter:sc,startVerse:sv,endBookId:eb,endChapter:ec,endVerse:ev,source:'manual'};var tid;if(tv==='new'){tid='t_'+Date.now();S.threads.push({id:tid,bookId:sb,startChapter:sc,startVerse:sv,currentChapter:ec,currentVerse:ev,direction:'forward',sessions:[sess.id],created:new Date().toISOString()})}else{tid=tv;var t=S.threads.find(function(x){return x.id===tid});if(t){t.currentChapter=ec;t.currentVerse=ev;t.sessions.push(sess.id)}}sess.threadId=tid;S.sessions.push(sess);if(sb===eb){for(var ch=sc;ch<=ec;ch++)mRd(sb,ch)}else{var bk=gB(sb);for(var c2=sc;c2<=bk.ch;c2++)mRd(sb,c2);for(var c3=1;c3<=ec;c3++)mRd(eb,c3)}sS();tryM(sb);if(sb!==eb)tryM(eb);popS()}
+async function mUV(w){var bid=document.getElementById('m'+w+'B').value,ch=+document.getElementById('m'+w+'C').value,s=document.getElementById('m'+w+'V'),mx=await verseMax(bid,ch),pick=Math.min(+s.value||1,mx);fillVerseSel(s,mx,pick)}
+function savMan(){var sb=document.getElementById('mSB').value,sc=+document.getElementById('mSC').value,sv=+document.getElementById('mSV').value,eb=document.getElementById('mEB').value,ec=+document.getElementById('mEC').value,ev=+document.getElementById('mEV').value,tv=document.getElementById('mTh').value;var dir='forward',selThread=null;if(tv!=='new'){selThread=S.threads.find(function(x){return x.id===tv});if(!selThread){toast('Selected thread was not found');return}if(sb!==selThread.bookId||eb!==selThread.bookId){toast('Passage must match the selected thread book');return}dir=selThread.direction||'forward'}else if(sb==='PSA'&&eb==='PSA')dir=document.getElementById('mDir').value||'forward';if(sb===eb&&!valPR(sc,sv,ec,ev,dir)){toast(dir==='backward'?'End must be before start':'End must be after start');return}var d=document.getElementById('mD').value,sess={id:'s_'+Date.now(),date:d,startBookId:sb,startChapter:sc,startVerse:sv,endBookId:eb,endChapter:ec,endVerse:ev,source:'manual'};var tid;if(tv==='new'){tid='t_'+Date.now();S.threads.push({id:tid,bookId:sb,startChapter:sc,startVerse:sv,currentChapter:ec,currentVerse:ev,direction:dir,sessions:[sess.id],created:new Date().toISOString()})}else{tid=tv;var t=selThread;if(t){t.currentChapter=ec;t.currentVerse=ev;t.sessions.push(sess.id)}}sess.threadId=tid;S.sessions.push(sess);if(sb===eb){if(dir==='backward'){for(var ch=sc;ch>=ec;ch--)mRd(sb,ch)}else{for(var ch2=sc;ch2<=ec;ch2++)mRd(sb,ch2)}}else{var bk=gB(sb);for(var c2=sc;c2<=bk.ch;c2++)mRd(sb,c2);for(var c3=1;c3<=ec;c3++)mRd(eb,c3)}sS();tryM(sb);if(sb!==eb)tryM(eb);popS()}
 
 // ===== SEARCH =====
 var sTo;function dSr(){clearTimeout(sTo);var q=document.getElementById('sIn').value.trim();if(q.length<3){document.getElementById('sRs').innerHTML='<div class="em"><div class="es">Type 3+ characters to search all '+TCH+' chapters.</div></div>';return}sTo=setTimeout(async function(){document.getElementById('sRs').innerHTML='<div class="em"><div class="es">Searching...</div></div>';var r=await sB(q);var note='<div style="font-size:10px;color:var(--tm);padding:6px 0;font-family:var(--fm)">'+r.length+' results across all '+TCH+' chapters</div>';if(!r.length){document.getElementById('sRs').innerHTML='<div class="em"><div class="es">No results found.</div></div>';return}var re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');document.getElementById('sRs').innerHTML=note+r.map(function(x){return '<div class="sr0" onclick="togSrch();openR(\''+x.bookId+'\','+x.chapter+',null,'+x.verse+')"><div class="ref">'+x.ref+'</div><div class="txt">'+x.text.replace(re,'<mark>$1</mark>')+'</div></div>'}).join('')},300)}
@@ -609,7 +652,7 @@ function impD(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.o
 function confirmRst(){showMod('Reset All Data','Delete all data permanently.',function(){S={threads:[],sessions:[],theme:S.theme,covOpen:true,showAll:false,fontSize:S.fontSize,version:S.version,history:[]};localStorage.removeItem('brc');sS();clModal();goTab('home')})}
 
 // ===== UPDATE SYSTEM =====
-var APP_VERSION='1.4';
+var APP_VERSION='1.5';
 var pendingWorker=null,swReg=null;
 
 function checkForUpdate(){
